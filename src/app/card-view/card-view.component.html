@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <mat-card class="card">
+    <mat-card-content class="flex-wrap" *ngIf="frontShowing; else description">
+      <h1 class="card-title">{{data[cardIndex].title_vocab}}</h1>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #description>
+  <mat-card-content class="flex-wrap">
+    <p class="card-description">{{data[cardIndex].description_vocab}}</p>
+  </mat-card-content>
+</ng-template>

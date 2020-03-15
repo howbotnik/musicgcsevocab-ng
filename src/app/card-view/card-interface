@@ -1,0 +1,6 @@
+interface Card {
+  id_vocab: number;
+  title_vocab: string;
+  description_vocab: string;
+}
+export default Card;

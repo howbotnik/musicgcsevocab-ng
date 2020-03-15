@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IncrementerService} from './incrementer.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'musicgcsevocab-ng';
+  title = 'Music GCSE Vocab';
+
+  constructor(private incrementer: IncrementerService) {
+
+  }
+
+  paddlePushed(message) {
+    this.incrementer.changeMessage(message);
+  }
+
+
 }
+
