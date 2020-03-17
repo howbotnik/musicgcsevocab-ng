@@ -32,12 +32,12 @@ export class CardViewComponent implements OnInit {
         switch (message) {
           case 'up': {
             this.frontShowing = true;
-            this.cardIndex++
+            this.addOneToCardIndex();
             break;
           }
           case 'down': {
             this.frontShowing = true;
-            this.cardIndex--
+            this.removeOneToCardIndex();
             break;
           }
           case 'flip': {
@@ -63,6 +63,22 @@ export class CardViewComponent implements OnInit {
       array[j] = x;
     }
     return array;
+  }
+
+  addOneToCardIndex() {
+    if (this.cardIndex === this.data.length - 1) {
+      console.log('Reached the end of the array');
+    } else {
+      this.cardIndex++;
+    }
+  }
+
+  removeOneToCardIndex() {
+    if (this.cardIndex === 0) {
+      console.log('Reached the end of the array');
+    } else {
+      this.cardIndex--;
+    }
   }
 
 }
